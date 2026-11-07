@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIWALI INFINITY 2026 – One Festival. Infinite Lights. Endless Happiness.</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            diwali: {
+              black: '#070312',
+              purple: '#1a0b2e',
+              deepPurple: '#110520',
+              gold: '#ffd700',
+              darkGold: '#b8860b',
+              amber: '#ff9900',
+              saffron: '#ff5500',
+              maroon: '#3b0918',
+              glass: 'rgba(255, 215, 0, 0.05)',
+              glassBorder: 'rgba(255, 215, 0, 0.2)'
+            }
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            script: ['Great Vibes', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'shimmer': 'shimmer 2.5s infinite linear'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-15px)' }
+            },
+            glow: {
+              '0%': { filter: 'drop-shadow(0 0 10px rgba(255, 215, 0, 0.6))' },
+              '100%': { filter: 'drop-shadow(0 0 30px rgba(255, 85, 0, 0.9))' }
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070312;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #b8860b, #ff5500);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ffd700;
+    }
+
+    /* Glassmorphic Styles */
+    .glass-panel {
+      background: rgba(22, 10, 36, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 215, 0, 0.18);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+    .glass-card {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 85, 0, 0.03) 100%);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .glass-card:hover {
+      border-color: rgba(255, 215, 0, 0.6);
+      box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.3);
+      transform: translateY(-6px);
+    }
+
+    /* Glowing Text Effects */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fff2a3 0%, #ffd700 50%, #ff8c00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-gold {
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 140, 0, 0.3);
+    }
+
+    /* Diya Flame CSS Animation */
+    .diya-flame {
+      width: 24px;
+      height: 38px;
+      background: linear-gradient(to top, #ff3300 0%, #ff9900 40%, #ffff00 80%, #ffffff 100%);
+      border-radius: 50% 50% 20% 20% / 80% 80% 30% 30%;
+      box-shadow: 0 0 20px #ff5500, 0 0 40px #ffaa00, 0 0 60px #ffff00;
+      animation: flicker 0.15s ease-in-out infinite alternate;
+      transform-origin: center bottom;
+    }
+    @keyframes flicker {
+      0% { transform: scale(1) rotate(-1deg); opacity: 0.95; }
+      100% { transform: scale(1.08) rotate(1deg); opacity: 1; filter: drop-shadow(0 0 15px #ff5500); }
+    }
+
+    /* Shimmer Effect for buttons */
+    .btn-gold {
+      background: linear-gradient(90deg, #b8860b, #ffd700, #ff8c00, #b8860b);
+      background-size: 300% 100%;
+      transition: all 0.5s ease-in-out;
+      color: #070312;
+      font-weight: 700;
+    }
+    .btn-gold:hover {
+      background-position: 100% 0;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    }
+
+    /* Canvas full overlay */
+    #fireworksCanvas, #starsCanvas {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 40;
+    }
+
+    /* Hide element */
+    .hidden-el {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="bg-diwali-black text-slate-100 font-sans selection:bg-diwali-gold selection:text-diwali-black overflow-x-hidden min-h-screen">
+
+  <!-- BACKGROUND FIREWORKS CANVAS -->
+  <canvas id="fireworksCanvas"></canvas>
+  <canvas id="starsCanvas"></canvas>
+
+  <!-- SECTION 1: CINEMATIC INTRODUCTION OVERLAY -->
+  <div id="cinematicIntro" class="fixed inset-0 z-50 bg-diwali-black flex flex-col items-center justify-center p-4 transition-opacity duration-1000">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-diwali-purple via-diwali-black to-diwali-black opacity-80"></div>
+    
+    <div class="relative z-10 text-center max-w-2xl mx-auto flex flex-col items-center">
+      <!-- Animated Glowing Diya -->
+      <div class="relative mb-8 cursor-pointer group" onclick="playDiyaSound()">
+        <div class="absolute -inset-4 rounded-full bg-diwali-gold/20 blur-xl group-hover:bg-diwali-saffron/40 transition-all duration-500 animate-pulse"></div>
+        <svg class="w-32 h-32 text-diwali-gold drop-shadow-[0_0_25px_rgba(255,215,0,0.8)]" viewBox="0 0 100 100" fill="none">
+          <!-- Diya Base -->
+          <path d="M20 60 C20 85, 80 85, 80 60 C70 65, 30 65, 20 60 Z" fill="url(#goldGrad)" stroke="#ffd700" stroke-width="2"/>
+          <path d="M15 58 Q50 72 85 58 Q50 64 15 58 Z" fill="#ff8c00"/>
+          <!-- Flame -->
+          <foreignObject x="38" y="15" width="24" height="45">
+            <div class="diwali-flame diya-flame mx-auto"></div>
+          </foreignObject>
+          <defs>
+            <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffd700"/>
+              <stop offset="50%" stop-color="#b8860b"/>
+              <stop offset="100%" stop-color="#ff5500"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <!-- Animated Letter Typing Title -->
+      <h2 id="introSub" class="text-xs sm:text-sm tracking-[0.4em] uppercase text-diwali-gold/80 mb-3 font-cinzel font-semibold min-h-[1.5rem]"></h2>
+      <h1 id="introTitle" class="text-3xl sm:text-5xl md:text-6xl font-cinzel font-black tracking-wider gold-gradient-text glow-gold mb-8 min-h-[4rem]"></h1>
+
+      <p class="text-slate-300 font-sans text-sm sm:text-base max-w-lg mb-10 opacity-90 leading-relaxed">
+        Step into an extraordinary realm of divine lights, glowing celebrations, interactive wonders, and infinite blessings.
+      </p>
+
+      <!-- Ignite Button -->
+      <button id="igniteBtn" onclick="igniteFestival()" class="btn-gold px-10 py-4 rounded-full text-lg tracking-widest uppercase shadow-2xl flex items-center gap-3 transform hover:scale-105 active:scale-95 transition-all">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <span>Ignite The Festival</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- HEADER & NAVIGATION -->
+  <header id="mainHeader" class="sticky top-0 z-30 glass-panel border-b border-diwali-gold/20 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-diwali-saffron to-diwali-gold p-0.5 flex items-center justify-center shadow-[0_0_15px_rgba(255,215,0,0.5)]">
+          <div class="w-full h-full bg-diwali-black rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-[#ff9900] fa-flame text-diwali-gold group-hover:scale-110 transition-transform"></i>
+          </div>
+        </div>
+        <div>
+          <span class="font-cinzel font-bold text-lg sm:text-xl text-white tracking-wider block">DIWALI <span class="gold-gradient-text">INFINITY</span></span>
+          <span class="text-[10px] tracking-widest text-diwali-gold/80 block uppercase font-sans">2026 Edition</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6 font-medium text-xs tracking-wider uppercase text-slate-300">
+        <a href="#experience" class="hover:text-diwali-gold transition-colors">Experience</a>
+        <a href="#wish-generator" class="hover:text-diwali-gold transition-colors">Wishes</a>
+        <a href="#surprises" class="hover:text-diwali-gold transition-colors">12 Surprises</a>
+        <a href="#wish-wall" class="hover:text-diwali-gold transition-colors">Wish Wall</a>
+        <a href="#games" class="hover:text-diwali-gold transition-colors">Games</a>
+        <a href="#knowledge" class="hover:text-diwali-gold transition-colors">Guide</a>
+        <a href="#card-studio" class="hover:text-diwali-gold transition-colors">Card Studio</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Audio Synth Toggle -->
+        <button id="audioToggleBtn" onclick="toggleAudio()" title="Toggle Ambient Synth & SFX" class="w-10 h-10 rounded-full border border-diwali-gold/30 flex items-center justify-center bg-diwali-purple/50 text-diwali-gold hover:bg-diwali-gold hover:text-diwali-black transition-all">
+          <i id="audioIcon" class="fa-solid fa-volume-xmark"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button onclick="toggleMobileNav()" class="lg:hidden w-10 h-10 rounded-full border border-diwali-gold/30 flex items-center justify-center bg-diwali-purple/50 text-diwali-gold">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobileNav" class="hidden lg:hidden glass-panel border-t border-diwali-gold/20 px-6 py-4 flex flex-col gap-4 text-sm font-cinzel text-slate-200">
+      <a href="#experience" onclick="toggleMobileNav()" class="hover:text-diwali-gold">Experience</a>
+      <a href="#wish-generator" onclick="toggleMobileNav()" class="hover:text-diwali-gold">Wish Generator</a>
+      <a href="#surprises" onclick="toggleMobileNav()" class="hover:text-diwali-gold">12 Surprises</a>
+      <a href="#wish-wall" onclick="toggleMobileNav()" class="hover:text-diwali-gold">Wish Wall</a>
+      <a href="#games" onclick="toggleMobileNav()" class="hover:text-diwali-gold">Mini Games</a>
+      <a href="#knowledge" onclick="toggleMobileNav()" class="hover:text-diwali-gold">Knowledge Hub</a>
+      <a href="#card-studio" onclick="toggleMobileNav()" class="hover:text-diwali-gold">Greeting Card Studio</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="relative z-10">
+
+    <!-- SECTION 2: MAIN DIWALI EXPERIENCE & HERO -->
+    <section id="experience" class="relative min-h-[90vh] py-16 px-4 flex flex-col items-center justify-center overflow-hidden">
+      <!-- Decorative Backdrop Lights -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-diwali-saffron/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6 border border-diwali-gold/30 text-xs sm:text-sm font-semibold tracking-widest text-diwali-gold uppercase">
+          <i class="fa-solid fa-sparkles text-diwali-saffron"></i>
+          <span>The Festival of Infinite Light</span>
+        </div>
+
+        <!-- Grand Title -->
+        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-cinzel font-black tracking-tight gold-gradient-text glow-gold mb-6 leading-tight">
+          HAPPY DIWALI 2026!
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-300 font-sans max-w-3xl mb-10 leading-relaxed font-light">
+          "One Festival. Infinite Lights. Endless Happiness."<br>
+          <span class="text-sm text-diwali-gold/80 italic font-serif">May the auspicious light illuminate your life with prosperity, health, peace, and eternal joy.</span>
+        </p>
+
+        <!-- Diya Art Grid Showcase -->
+        <div class="flex items-center justify-center gap-8 mb-12">
+          <div class="diya-flame scale-75 hidden sm:block"></div>
+          <div class="relative w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
+            <div class="absolute inset-0 rounded-full bg-diwali-gold/20 animate-ping opacity-30"></div>
+            <i class="fa-solid fa-dharmachakra text-6xl sm:text-7xl text-diwali-gold animate-spin-slow opacity-80"></i>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="diya-flame"></div>
+            </div>
+          </div>
+          <div class="diya-flame scale-75 hidden sm:block"></div>
+        </div>
+
+        <!-- COUNTDOWN TIMER & CLOCK HUB -->
+        <div class="w-full max-w-4xl glass-panel rounded-3xl p-6 sm:p-8 border border-diwali-gold/30 mb-10 shadow-2xl">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-diwali-gold/10">
+            <div class="text-center md:text-left">
+              <span class="text-xs uppercase tracking-widest text-diwali-gold/70 font-semibold block">Live Festive Time</span>
+              <span id="liveClock" class="text-2xl sm:text-3xl font-cinzel font-bold text-white">00:00:00 AM</span>
+            </div>
+            <div class="text-center md:text-right">
+              <span class="text-xs uppercase tracking-widest text-diwali-saffron font-semibold block">Target Event Date</span>
+              <span class="text-base font-cinzel font-semibold text-slate-200">Diwali Mahotsav – Nov 8, 2026</span>
+            </div>
+          </div>
+
+          <!-- Countdown Digits -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
+            <div class="bg-diwali-purple/60 rounded-2xl p-4 border border-diwali-gold/20 flex flex-col items-center">
+              <span id="cdDays" class="text-3xl sm:text-5xl font-cinzel font-bold text-diwali-gold">00</span>
+              <span class="text-xs uppercase tracking-wider text-slate-400 mt-1">Days</span>
+            </div>
+            <div class="bg-diwali-purple/60 rounded-2xl p-4 border border-diwali-gold/20 flex flex-col items-center">
+              <span id="cdHours" class="text-3xl sm:text-5xl font-cinzel font-bold text-diwali-gold">00</span>
+              <span class="text-xs uppercase tracking-wider text-slate-400 mt-1">Hours</span>
+            </div>
+            <div class="bg-diwali-purple/60 rounded-2xl p-4 border border-diwali-gold/20 flex flex-col items-center">
+              <span id="cdMinutes" class="text-3xl sm:text-5xl font-cinzel font-bold text-diwali-gold">00</span>
+              <span class="text-xs uppercase tracking-wider text-slate-400 mt-1">Minutes</span>
+            </div>
+            <div class="bg-diwali-purple/60 rounded-2xl p-4 border border-diwali-gold/20 flex flex-col items-center">
+              <span id="cdSeconds" class="text-3xl sm:text-5xl font-cinzel font-bold text-diwali-saffron animate-pulse">00</span>
+              <span class="text-xs uppercase tracking-wider text-slate-400 mt-1">Seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Controls Grid -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <button onclick="triggerFireworksBurst()" class="btn-gold px-6 py-3.5 rounded-2xl text-sm uppercase tracking-wider flex items-center gap-2">
+            <i class="fa-solid fa-burst"></i>
+            <span>Launch Fullscreen Fireworks</span>
+          </button>
+          <button onclick="activateCelebrationMode()" class="px-6 py-3.5 rounded-2xl text-sm uppercase tracking-wider font-semibold border border-diwali-gold text-diwali-gold bg-diwali-purple/40 hover:bg-diwali-gold hover:text-diwali-black transition-all flex items-center gap-2">
+            <i class="fa-solid fa-champagne-glasses"></i>
+            <span>Celebration Mode</span>
+          </button>
+          <button onclick="toggleAudio()" class="px-6 py-3.5 rounded-2xl text-sm uppercase tracking-wider font-semibold border border-diwali-gold/40 text-slate-200 bg-diwali-purple/20 hover:border-diwali-gold transition-all flex items-center gap-2">
+            <i class="fa-solid fa-music"></i>
+            <span>Toggle Background Audio</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PERSONALIZED WISH GENERATOR -->
+    <section id="wish-generator" class="py-20 px-4 max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-5xl font-cinzel font-bold gold-gradient-text mb-4">Personalized Diwali Wish Generator</h2>
+        <p class="text-slate-300 max-w-xl mx-auto">Craft tailored, heart-touching, royal, or humorous festive blessings for your loved ones in seconds.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Form Inputs (5 cols) -->
+        <div class="lg:col-span-5 glass-panel p-6 sm:p-8 rounded-3xl border border-diwali-gold/20">
+          <form id="wishForm" onsubmit="event.preventDefault(); generateWish();" class="flex flex-col gap-5">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-diwali-gold mb-2">Recipient Name</label>
+              <input type="text" id="recipientName" placeholder="e.g. Priyanshu / Mom & Dad" required class="w-full bg-diwali-black/70 border border-diwali-gold/30 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-diwali-gold transition-colors">
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-diwali-gold mb-2">Relationship</label>
+              <select id="recipientRel" class="w-full bg-diwali-black/70 border border-diwali-gold/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-diwali-gold transition-colors">
+                <option value="Friend">Friend</option>
+                <option value="Best Friend">Best Friend</option>
+                <option value="Mother">Mother</option>
+                <option value="Father">Father</option>
+                <option value="Brother">Brother</option>
+                <option value="Sister">Sister</option>
+                <option value="Grandparents">Grandparents</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Relative">Relative</option>
+                <option value="Everyone">Everyone</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-diwali-gold mb-2">Wish Tone & Style</label>
+              <select id="wishStyle" class="w-full bg-diwali-black/70 border border-diwali-gold/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-diwali-gold transition-colors">
+                <option value="Emotional">Emotional & Heartfelt</option>
+                <option value="Funny">Funny & Joyous</option>
+                <option value="Royal">Royal & Luxurious</option>
+                <option value="Traditional">Traditional Sanskrit Blend</option>
+                <option value="Inspirational">Inspirational & Uplifting</option>
+                <option value="Premium">Ultra Premium Gold</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-gold py-3.5 rounded-xl text-sm font-bold uppercase tracking-wider mt-2 flex items-center justify-center gap-2">
+              <i class="fa-solid fa-wand-magic"></i>
+              <span>Generate Custom Wish</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Wish Output Display (7 cols) -->
+        <div class="lg:col-span-7 glass-card p-6 sm:p-10 rounded-3xl border border-diwali-gold/40 flex flex-col justify-between min-h-[380px] relative">
+          <div class="absolute top-4 right-4 opacity-10">
+            <i class="fa-solid fa-quote-right text-8xl text-diwali-gold"></i>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 text-xs uppercase tracking-widest text-diwali-saffron font-bold mb-4">
+              <i class="fa-solid fa-envelope-open-text"></i>
+              <span>Bespoke Festive Greeting</span>
+            </div>
+            <div id="wishOutput" class="text-slate-100 font-serif text-lg sm:text-xl leading-relaxed italic border-l-2 border-diwali-gold pl-4 my-4 min-h-[120px]">
+              Click "Generate Custom Wish" to create a beautifully styled festive greeting tailored for your loved one!
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-diwali-gold/20">
+            <button onclick="copyGeneratedWish()" class="px-4 py-2.5 rounded-xl border border-diwali-gold/30 bg-diwali-purple/50 text-xs font-semibold uppercase tracking-wider hover:bg-diwali-gold hover:text-diwali-black transition-all flex items-center gap-2">
+              <i class="fa-regular fa-copy"></i> Copy Wish
+            </button>
+            <button onclick="shareWishWhatsApp()" class="px-4 py-2.5 rounded-xl bg-emerald-600/80 hover:bg-emerald-500 text-white text-xs font-semibold uppercase tracking-wider transition-all flex items-center gap-2">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </button>
+            <button onclick="generateWish()" class="px-4 py-2.5 rounded-xl border border-diwali-gold/30 bg-diwali-purple/50 text-xs font-semibold uppercase tracking-wider hover:bg-diwali-gold hover:text-diwali-black transition-all flex items-center gap-2">
+              <i class="fa-solid fa-rotate"></i> Regenerate
+            </button>
+            <button onclick="downloadWishAsCard()" class="px-4 py-2.5 rounded-xl bg-diwali-saffron/80 hover:bg-diwali-saffron text-white text-xs font-semibold uppercase tracking-wider transition-all flex items-center gap-2 ml-auto">
+              <i class="fa-solid fa-download"></i> Download Card Image
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: 12 INTERACTIVE SURPRISE CARDS -->
+    <section id="surprises" class="py-20 px-4 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-5xl font-cinzel font-bold gold-gradient-text mb-4">12 Divine Surprise Cards</h2>
+        <p class="text-slate-300 max-w-xl mx-auto">Click on any festive card below to unbox interactive blessings, golden showers, fortunes, and light shows!</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Surprise 1 -->
+        <div onclick="openSurprise(1)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-hands-praying"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">1. Golden Blessing</h3>
+            <p class="text-xs text-slate-400 mt-1">Receive eternal Vedic grace</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Click To Reveal</span>
+        </div>
+
+        <!-- Surprise 2 -->
+        <div onclick="openSurprise(2)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-flame"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">2. Magic Diya</h3>
+            <p class="text-xs text-slate-400 mt-1">Light interactive 3D flame</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Click To Ignite</span>
+        </div>
+
+        <!-- Surprise 3 -->
+        <div onclick="openSurprise(3)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-volcano"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">3. Fireworks Explosion</h3>
+            <p class="text-xs text-slate-400 mt-1">Launch sky fireworks blast</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Click To Blast</span>
+        </div>
+
+        <!-- Surprise 4 -->
+        <div onclick="openSurprise(4)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-key"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">4. Secret Message</h3>
+            <p class="text-xs text-slate-400 mt-1">Flip card emotional reveal</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Click To Unlock</span>
+        </div>
+
+        <!-- Surprise 5 -->
+        <div onclick="openSurprise(5)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-crystal-ball"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">5. Fortune of Light</h3>
+            <p class="text-xs text-slate-400 mt-1">Generate Diwali prophecy</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Read Fortune</span>
+        </div>
+
+        <!-- Surprise 6 -->
+        <div onclick="openSurprise(6)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-box-open"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">6. Happiness Box</h3>
+            <p class="text-xs text-slate-400 mt-1">Unbox golden quotes</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Unbox Joy</span>
+        </div>
+
+        <!-- Surprise 7 -->
+        <div onclick="openSurprise(7)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-coins"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">7. Golden Shower</h3>
+            <p class="text-xs text-slate-400 mt-1">Golden particle coin rain</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Shower Gold</span>
+        </div>
+
+        <!-- Surprise 8 -->
+        <div onclick="openSurprise(8)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-house-chimney-heart"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">8. Family Love</h3>
+            <p class="text-xs text-slate-400 mt-1">Heartfelt home blessings</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Open Message</span>
+        </div>
+
+        <!-- Surprise 9 -->
+        <div onclick="openSurprise(9)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">9. Friendship Forever</h3>
+            <p class="text-xs text-slate-400 mt-1">Special bond popover</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Celebrate Bond</span>
+        </div>
+
+        <!-- Surprise 10 -->
+        <div onclick="openSurprise(10)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-star shadow-glow"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">10. Million Stars</h3>
+            <p class="text-xs text-slate-400 mt-1">Night sky starfield effect</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Toggle Stars</span>
+        </div>
+
+        <!-- Surprise 11 -->
+        <div onclick="openSurprise(11)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px]">
+          <div class="w-16 h-16 rounded-2xl bg-diwali-gold/10 border border-diwali-gold/30 flex items-center justify-center text-diwali-gold text-3xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-gift"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg text-white group-hover:text-diwali-gold transition-colors">11. Mystery Gift</h3>
+            <p class="text-xs text-slate-400 mt-1">Open mystery festive box</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Open Gift</span>
+        </div>
+
+        <!-- Surprise 12 -->
+        <div onclick="openSurprise(12)" class="glass-card p-6 rounded-3xl text-center cursor-pointer group flex flex-col items-center justify-between min-h-[220px] border-diwali-gold">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-diwali-saffron to-diwali-gold text-diwali-black flex items-center justify-center text-3xl group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,215,0,0.5)]">
+            <i class="fa-solid fa-infinity"></i>
+          </div>
+          <div>
+            <h3 class="font-cinzel font-bold text-lg gold-gradient-text">12. Infinite Light</h3>
+            <p class="text-xs text-slate-300 mt-1">Ultimate light & firework finale</p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-gold animate-pulse">Ultimate Show</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SURPRISE MODAL CONTAINER -->
+    <div id="surpriseModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden-el flex items-center justify-center p-4">
+      <div class="glass-panel p-8 rounded-3xl max-w-lg w-full border border-diwali-gold relative flex flex-col items-center text-center">
+        <button onclick="closeSurpriseModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full border border-diwali-gold/30 flex items-center justify-center text-slate-400 hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="modalIcon" class="text-5xl text-diwali-gold mb-4"></div>
+        <h3 id="modalTitle" class="text-2xl font-cinzel font-bold gold-gradient-text mb-3"></h3>
+        <div id="modalBody" class="text-slate-200 text-sm sm:text-base leading-relaxed my-4 min-h-[100px] flex flex-col items-center justify-center"></div>
+
+        <button onclick="closeSurpriseModal()" class="btn-gold px-8 py-3 rounded-xl uppercase tracking-wider text-xs font-bold mt-4">
+          Close Surprise
+        </button>
+      </div>
+    </div>
+
+    <!-- SECTION 5: DIWALI FAMILY & FRIENDS WALL (WISH WALL) -->
+    <section id="wish-wall" class="py-20 px-4 max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-5xl font-cinzel font-bold gold-gradient-text mb-4">Diwali Family & Friends Wall</h2>
+        <p class="text-slate-300 max-w-xl mx-auto">Leave your festive greetings, warm blessings, and memories on our persistent community wall!</p>
+      </div>
+
+      <!-- Add Wish Form -->
+      <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-diwali-gold/20 mb-12">
+        <form id="wallForm" onsubmit="event.preventDefault(); addWallMessage();" class="grid grid-cols-1 sm:grid-cols-12 gap-4">
+          <div class="sm:col-span-4">
+            <input type="text" id="wallName" placeholder="Your Name" required class="w-full bg-diwali-black/70 border border-diwali-gold/30 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-diwali-gold">
+          </div>
+          <div class="sm:col-span-6">
+            <input type="text" id="wallMsg" placeholder="Share your Diwali blessing or wish..." required class="w-full bg-diwali-black/70 border border-diwali-gold/30 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-diwali-gold">
+          </div>
+          <div class="sm:col-span-2">
+            <button type="submit" class="btn-gold w-full h-full py-3 rounded-xl text-xs uppercase tracking-wider font-bold">
+              Post Wish
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Wishes Grid -->
+      <div id="wishesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Dynamic Cards rendered via JS -->
+      </div>
+    </section>
+
+    <!-- SECTION 6: DIWALI MINI GAMES HUB -->
+    <section id="games" class="py-20 px-4 max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-5xl font-cinzel font-bold gold-gradient-text mb-4">Diwali Mini Games Hub</h2>
+        <p class="text-slate-300 max-w-xl mx-auto">Play fun interactive festive games, score points, and celebrate your victory!</p>
+      </div>
+
+      <!-- Game Tabs -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        <button onclick="switchGame(1)" id="tabGame1" class="px-6 py-3 rounded-2xl font-cinzel text-xs font-bold uppercase tracking-wider border border-diwali-gold bg-diwali-gold text-diwali-black transition-all">
+          1. Catch Golden Coins
+        </button>
+        <button onclick="switchGame(2)" id="tabGame2" class="px-6 py-3 rounded-2xl font-cinzel text-xs font-bold uppercase tracking-wider border border-diwali-gold/30 text-slate-300 hover:border-diwali-gold transition-all">
+          2. Light The Diyas
+        </button>
+        <button onclick="switchGame(3)" id="tabGame3" class="px-6 py-3 rounded-2xl font-cinzel text-xs font-bold uppercase tracking-wider border border-diwali-gold/30 text-slate-300 hover:border-diwali-gold transition-all">
+          3. Firework Reaction
+        </button>
+        <button onclick="switchGame(4)" id="tabGame4" class="px-6 py-3 rounded-2xl font-cinzel text-xs font-bold uppercase tracking-wider border border-diwali-gold/30 text-slate-300 hover:border-diwali-gold transition-all">
+          4. Memory of Lights
+        </button>
+      </div>
+
+      <!-- Game Stage Container -->
+      <div class="glass-panel p-6 sm:p-10 rounded-3xl border border-diwali-gold/30 min-h-[480px] flex flex-col items-center justify-center relative overflow-hidden">
+        
+        <!-- GAME 1: CATCH GOLDEN COINS -->
+        <div id="game1Container" class="w-full flex flex-col items-center">
+          <div class="flex items-center justify-between w-full max-w-md mb-4 text-sm font-semibold">
+            <span class="text-diwali-gold">Score: <span id="g1Score" class="text-white">0</span></span>
+            <span class="text-diwali-saffron">Time: <span id="g1Timer" class="text-white">30</span>s</span>
+          </div>
+
+          <div id="g1Canvas" class="w-full max-w-md h-[320px] bg-diwali-black/90 border border-diwali-gold/30 rounded-2xl relative overflow-hidden cursor-crosshair">
+            <div id="g1Basket" class="absolute bottom-2 left-1/2 -translate-x-1/2 w-16 h-6 bg-gradient-to-r from-diwali-saffron to-diwali-gold rounded-full border border-white shadow-[0_0_15px_rgba(255,215,0,0.8)]"></div>
+          </div>
+
+          <button onclick="startCoinCatchGame()" class="btn-gold px-8 py-3 rounded-xl uppercase font-bold text-xs tracking-widest mt-6">
+            Start Catching Coins
+          </button>
+        </div>
+
+        <!-- GAME 2: LIGHT THE DIYAS -->
+        <div id="game2Container" class="w-full flex flex-col items-center hidden-el">
+          <div class="flex items-center justify-between w-full max-w-md mb-4 text-sm font-semibold">
+            <span class="text-diwali-gold">Lit Diyas: <span id="g2Score" class="text-white">0</span> / 12</span>
+            <span class="text-diwali-saffron">Timer: <span id="g2Timer" class="text-white">15</span>s</span>
+          </div>
+
+          <div id="g2Grid" class="grid grid-cols-4 gap-4 w-full max-w-md">
+            <!-- 12 Diya Click Targets -->
+          </div>
+
+          <button onclick="startDiyaLightGame()" class="btn-gold px-8 py-3 rounded-xl uppercase font-bold text-xs tracking-widest mt-6">
+            Start Lighting Diyas
+          </button>
+        </div>
+
+        <!-- GAME 3: FIREWORK REACTION -->
+        <div id="game3Container" class="w-full flex flex-col items-center hidden-el">
+          <div class="flex items-center justify-between w-full max-w-md mb-4 text-sm font-semibold">
+            <span class="text-diwali-gold">Popped Fireworks: <span id="g3Score" class="text-white">0</span></span>
+            <span class="text-diwali-saffron">Time: <span id="g3Timer" class="text-white">20</span>s</span>
+          </div>
+
+          <div id="g3Area" class="w-full max-w-md h-[300px] bg-diwali-black/90 border border-diwali-gold/30 rounded-2xl relative overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 flex items-center justify-center text-slate-500 text-xs">Click popping fireworks before they vanish!</div>
+          </div>
+
+          <button onclick="startFireworkGame()" class="btn-gold px-8 py-3 rounded-xl uppercase font-bold text-xs tracking-widest mt-6">
+            Start Firework Blast
+          </button>
+        </div>
+
+        <!-- GAME 4: MEMORY OF LIGHTS -->
+        <div id="game4Container" class="w-full flex flex-col items-center hidden-el">
+          <div class="flex items-center justify-between w-full max-w-md mb-4 text-sm font-semibold">
+            <span class="text-diwali-gold">Matches: <span id="g4Score" class="text-white">0</span> / 6</span>
+            <span class="text-diwali-saffron">Moves: <span id="g4Moves" class="text-white">0</span></span>
+          </div>
+
+          <div id="g4Grid" class="grid grid-cols-4 gap-3 w-full max-w-md">
+            <!-- 12 Memory Cards -->
+          </div>
+
+          <button onclick="startMemoryGame()" class="btn-gold px-8 py-3 rounded-xl uppercase font-bold text-xs tracking-widest mt-6">
+            Restart Memory Game
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: FESTIVAL KNOWLEDGE HUB -->
+    <section id="knowledge" class="py-20 px-4 max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-5xl font-cinzel font-bold gold-gradient-text mb-4">Festival Knowledge Hub</h2>
+        <p class="text-slate-300 max-w-xl mx-auto">Discover the deep spiritual origins, 5 sacred days, traditional sweets, and eco-friendly tips.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- 5 Days of Diwali Accordion Card -->
+        <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-diwali-gold/20">
+          <h3 class="text-2xl font-cinzel font-bold text-diwali-gold mb-6 flex items-center gap-3">
+            <i class="fa-solid fa-calendar-days text-diwali-saffron"></i> The 5 Sacred Days
+          </h3>
+          <div class="flex flex-col gap-4">
+            <details class="glass-card p-4 rounded-xl group cursor-pointer">
+              <summary class="font-bold text-slate-100 group-hover:text-diwali-gold transition-colors flex justify-between items-center">
+                <span>Day 1: Dhanteras</span>
+                <i class="fa-solid fa-chevron-down text-xs text-diwali-gold"></i>
+              </summary>
+              <p class="text-sm text-slate-300 mt-3 leading-relaxed">Dedicated to worshipping Goddess Lakshmi and Lord Dhanvantari. People buy gold, silver, and new utensils for wealth and wellness.</p>
+            </details>
+            <details class="glass-card p-4 rounded-xl group cursor-pointer">
+              <summary class="font-bold text-slate-100 group-hover:text-diwali-gold transition-colors flex justify-between items-center">
+                <span>Day 2: Naraka Chaturdashi (Chhoti Diwali)</span>
+                <i class="fa-solid fa-chevron-down text-xs text-diwali-gold"></i>
+              </summary>
+              <p class="text-sm text-slate-300 mt-3 leading-relaxed">Celebrates the victory of Lord Krishna over the demon Narakasura. Homes are decorated with rangolis and diyas.</p>
+            </details>
+            <details class="glass-card p-4 rounded-xl group cursor-pointer" open>
+              <summary class="font-bold text-slate-100 group-hover:text-diwali-gold transition-colors flex justify-between items-center">
+                <span>Day 3: Lakshmi Puja (Main Diwali)</span>
+                <i class="fa-solid fa-chevron-down text-xs text-diwali-gold"></i>
+              </summary>
+              <p class="text-sm text-slate-300 mt-3 leading-relaxed">The main day marking Lord Rama's return to Ayodhya. Families illuminate homes with lamps and offer prayers to Lakshmi & Ganesha.</p>
+            </details>
+            <details class="glass-card p-4 rounded-xl group cursor-pointer">
+              <summary class="font-bold text-slate-100 group-hover:text-diwali-gold transition-colors flex justify-between items-center">
+                <span>Day 4: Govardhan Puja / Padwa</span>
+                <i class="fa-solid fa-chevron-down text-xs text-diwali-gold"></i>
+              </summary>
+              <p class="text-sm text-slate-300 mt-3 leading-relaxed">Honors Lord Krishna lifting Mount Govardhan to protect villagers from torrential rains. Annakut feasts are prepared.</p>
+            </details>
+            <details class="glass-card p-4 rounded-xl group cursor-pointer">
+              <summary class="font-bold text-slate-100 group-hover:text-diwali-gold transition-colors flex justify-between items-center">
+                <span>Day 5: Bhai Dooj</span>
+                <i class="fa-solid fa-chevron-down text-xs text-diwali-gold"></i>
+              </summary>
+              <p class="text-sm text-slate-300 mt-3 leading-relaxed">Celebrates the sacred bond between brothers and sisters, where sisters pray for their brothers' long life and prosperity.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Festive Sweets & Eco Tips -->
+        <div class="flex flex-col gap-6">
+          <div class="glass-panel p-6 rounded-3xl border border-diwali-gold/20">
+            <h3 class="text-xl font-cinzel font-bold text-diwali-gold mb-4 flex items-center gap-3">
+              <i class="fa-solid fa-bowl-food text-diwali-saffron"></i> Traditional Diwali Delicacies
+            </h3>
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="glass-card p-3 rounded-xl">
+                <span class="font-bold text-white block">Kaju Katli</span>
+                <span class="text-slate-400">Rich cashew diamond fudge</span>
+              </div>
+              <div class="glass-card p-3 rounded-xl">
+                <span class="font-bold text-white block">Besan Laddoo</span>
+                <span class="text-slate-400">Golden roasted gram sweets</span>
+              </div>
+              <div class="glass-card p-3 rounded-xl">
+                <span class="font-bold text-white block">Chakli & Namkeen</span>
+                <span class="text-slate-400">Crispy spiced festive snacks</span>
+              </div>
+              <div class="glass-card p-3 rounded-xl">
+                <span class="font-bold text-white block">Gujiya</span>
+                <span class="text-slate-400">Sweet khoya stuffed dumplings</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-6 rounded-3xl border border-diwali-gold/20">
+            <h3 class="text-xl font-cinzel font-bold text-diwali-gold mb-4 flex items-center gap-3">
+              <i class="fa-solid fa-leaf text-emerald-400"></i> Eco-Friendly Celebration
+            </h3>
+            <ul class="text-xs text-slate-300 flex flex-col gap-2.5">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Light natural clay diyas with mustard or sesame oil.</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Create organic Rangolis using rice powder and flower petals.</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Choose digital fireworks or green crackers to minimize air pollution.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: FESTIVE GREETING CARD STUDIO -->
+    <section id="card-studio" class="py-20 px-4 max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-5xl font-cinzel font-bold gold-gradient-text mb-4">Festive Greeting Card Studio</h2>
+        <p class="text-slate-300 max-w-xl mx-auto">Design personalized canvas greeting cards with customized backgrounds, texts, and festive artwork.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Controls (5 cols) -->
+        <div class="lg:col-span-5 glass-panel p-6 sm:p-8 rounded-3xl border border-diwali-gold/20 flex flex-col gap-5">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-diwali-gold mb-2">Sender Name</label>
+            <input type="text" id="cardSender" value="Your Name" oninput="drawStudioCard()" class="w-full bg-diwali-black/70 border border-diwali-gold/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-diwali-gold">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-diwali-gold mb-2">Receiver Name</label>
+            <input type="text" id="cardReceiver" value="Dearest Friend" oninput="drawStudioCard()" class="w-full bg-diwali-black/70 border border-diwali-gold/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-diwali-gold">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-diwali-gold mb-2">Background Palette</label>
+            <select id="cardTheme" onchange="drawStudioCard()" class="w-full bg-diwali-black/70 border border-diwali-gold/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-diwali-gold">
+              <option value="royal">Royal Gold & Midnight Purple</option>
+              <option value="saffron">Saffron Sunset & Amber Glow</option>
+              <option value="emerald">Emerald Grace & Gold</option>
+              <option value="dark">Deep Obsidian & Crimson</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-diwali-gold mb-2">Greeting Message</label>
+            <textarea id="cardText" rows="3" oninput="drawStudioCard()" class="w-full bg-diwali-black/70 border border-diwali-gold/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-diwali-gold text-sm">May the divine light of Diwali shine upon your home with peace, happiness, and eternal success!</textarea>
+          </div>
+
+          <div class="flex gap-3">
+            <button onclick="downloadStudioCard()" class="btn-gold flex-1 py-3 rounded-xl uppercase font-bold text-xs tracking-wider flex items-center justify-center gap-2">
+              <i class="fa-solid fa-download"></i> Download PNG
+            </button>
+            <button onclick="shareStudioCardWA()" class="bg-emerald-600 hover:bg-emerald-500 text-white flex-1 py-3 rounded-xl uppercase font-bold text-xs tracking-wider flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp"></i> Share
+            </button>
+          </div>
+        </div>
+
+        <!-- Canvas Preview (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col items-center justify-center">
+          <div class="glass-card p-4 rounded-3xl border border-diwali-gold/40 shadow-2xl">
+            <canvas id="studioCanvas" width="600" height="400" class="max-w-full h-auto rounded-2xl"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: INFINITE WISHES & QUOTES DATABASE -->
+    <section id="infinite-wishes" class="py-20 px-4 max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-5xl font-cinzel font-bold gold-gradient-text mb-4">Infinite Wishes & Quotes Library</h2>
+        <p class="text-slate-300 max-w-xl mx-auto">Explore over 100+ curated festive blessings, inspirational quotes, and warm messages.</p>
+      </div>
+
+      <!-- Search & Filters -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
+        <div class="relative w-full sm:w-96">
+          <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-diwali-gold/60"></i>
+          <input type="text" id="wishSearch" oninput="renderWishLibrary()" placeholder="Search wishes, quotes..." class="w-full bg-diwali-black/80 border border-diwali-gold/30 rounded-xl pl-11 pr-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-diwali-gold">
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="filterWishCategory('all')" class="cat-btn active px-4 py-2 rounded-xl text-xs font-bold uppercase border border-diwali-gold bg-diwali-gold text-diwali-black">All</button>
+          <button onclick="filterWishCategory('wishes')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold uppercase border border-diwali-gold/30 text-slate-300">Wishes</button>
+          <button onclick="filterWishCategory('quotes')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold uppercase border border-diwali-gold/30 text-slate-300">Quotes</button>
+          <button onclick="filterWishCategory('family')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold uppercase border border-diwali-gold/30 text-slate-300">Family</button>
+          <button onclick="filterWishCategory('inspirational')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold uppercase border border-diwali-gold/30 text-slate-300">Inspirational</button>
+        </div>
+      </div>
+
+      <!-- Library Grid -->
+      <div id="wishLibraryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- SECTION 10: ULTIMATE COSMIC SURPRISE FINALE -->
+    <section class="py-24 px-4 max-w-4xl mx-auto text-center">
+      <div class="glass-panel p-10 sm:p-16 rounded-3xl border-2 border-diwali-gold relative overflow-hidden flex flex-col items-center">
+        <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-diwali-saffron via-diwali-gold to-white flex items-center justify-center text-diwali-black text-4xl mb-6 animate-pulse shadow-[0_0_50px_rgba(255,215,0,0.8)] cursor-pointer" onclick="triggerCosmicFinale()">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl font-cinzel font-black gold-gradient-text mb-4">The Ultimate Cosmic Finale</h2>
+        <p class="text-slate-300 max-w-lg mb-8 leading-relaxed">Tap the glowing orb above to dim the universe, release thousands of celestial golden stars, and witness the ultimate grand Diwali blessing!</p>
+
+        <button onclick="triggerCosmicFinale()" class="btn-gold px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-2xl">
+          Ignite Cosmic Finale
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SECTION 11: FOOTER -->
+  <footer class="border-t border-diwali-gold/20 bg-diwali-black/90 py-12 px-4 relative z-10 text-center">
+    <div class="max-w-6xl mx-auto flex flex-col items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-flame text-diwali-gold text-2xl"></i>
+        <span class="font-cinzel font-bold text-xl text-white tracking-wider">DIWALI <span class="gold-gradient-text">INFINITY 2026</span></span>
+      </div>
+
+      <p class="text-xs text-slate-400 max-w-md">"One Festival. Infinite Lights. Endless Happiness."<br>Made with ❤️ and divine festive lights for friends and family worldwide.</p>
+
+      <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="w-12 h-12 rounded-full border border-diwali-gold/40 flex items-center justify-center text-diwali-gold hover:bg-diwali-gold hover:text-diwali-black transition-all">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+  </footer>
+
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    /* ==========================================================================
+       1. SYNTHESIZED WEB AUDIO API AUDIO ENGINE (NO EXTERNAL FILES REQUIRED)
+       ========================================================================== */
+    let audioCtx = null;
+    let isAudioMuted = true;
+    let ambientOsc1 = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function toggleAudio() {
+      initAudio();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      isAudioMuted = !isAudioMuted;
+
+      const icon = document.getElementById('audioIcon');
+      const btn = document.getElementById('audioToggleBtn');
+
+      if (!isAudioMuted) {
+        icon.className = "fa-solid fa-volume-high";
+        btn.classList.add('bg-diwali-gold', 'text-diwali-black');
+        startAmbientDrone();
+        playChimeSound();
+      } else {
+        icon.className = "fa-solid fa-volume-xmark";
+        btn.classList.remove('bg-diwali-gold', 'text-diwali-black');
+        stopAmbientDrone();
+      }
+    }
+
+    // Play Chime Sound Effect
+    function playChimeSound() {
+      if (isAudioMuted || !audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+      osc.frequency.exponentialRampToValueAtTime(1174.66, audioCtx.currentTime + 0.5); // D6
+
+      gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.8);
+    }
+
+    // Play Firework Pop Synth Sound
+    function playFireworkSynth() {
+      if (isAudioMuted || !audioCtx) return;
+      const now = audioCtx.currentTime;
+
+      // Pop noise
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(150, now);
+      osc.frequency.exponentialRampToValueAtTime(30, now + 0.3);
+
+      gain.gain.setValueAtTime(0.4, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.3);
+    }
+
+    // Play Diya Warm Light Sound
+    function playDiyaSound() {
+      if (isAudioMuted || !audioCtx) return;
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(440, now);
+      osc.frequency.exponentialRampToValueAtTime(880, now + 0.4);
+
+      gain.gain.setValueAtTime(0.3, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.4);
+    }
+
+    // Ambient Drone Generator
+    function startAmbientDrone() {
+      if (!audioCtx) return;
+      try {
+        ambientOsc1 = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        ambientOsc1.type = 'sine';
+        ambientOsc1.frequency.setValueAtTime(146.83, audioCtx.currentTime); // D3 Warm synth drone
+
+        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+        ambientOsc1.connect(gain);
+        gain.connect(audioCtx.destination);
+        ambientOsc1.start();
+      } catch (e) {}
+    }
+
+    function stopAmbientDrone() {
+      if (ambientOsc1) {
+        try { ambientOsc1.stop(); } catch(e) {}
+        ambientOsc1 = null;
+      }
+    }
+
+
+    /* ==========================================================================
+       2. CINEMATIC INTRO & TYPING ANIMATION
+       ========================================================================== */
+    const textSub = "THE NIGHT OF A MILLION LIGHTS";
+    const textTitle = "DIWALI INFINITY 2026";
+
+    function typeWriterEffect() {
+      let i = 0, j = 0;
+      const subEl = document.getElementById('introSub');
+      const titleEl = document.getElementById('introTitle');
+
+      function typeSub() {
+        if (i < textSub.length) {
+          subEl.innerHTML += textSub.charAt(i);
+          i++;
+          setTimeout(typeSub, 40);
+        } else {
+          setTimeout(typeTitle, 200);
+        }
+      }
+
+      function typeTitle() {
+        if (j < textTitle.length) {
+          titleEl.innerHTML += textTitle.charAt(j);
+          j++;
+          setTimeout(typeTitle, 60);
+        }
+      }
+
+      typeSub();
+    }
+
+    function igniteFestival() {
+      playChimeSound();
+      triggerFireworksBurst();
+      const intro = document.getElementById('cinematicIntro');
+      intro.style.opacity = '0';
+      setTimeout(() => {
+        intro.classList.add('hidden-el');
+      }, 1000);
+    }
+
+
+    /* ==========================================================================
+       3. CANVAS FIREWORKS & STARFIELD ENGINE
+       ========================================================================== */
+    const fwCanvas = document.getElementById('fireworksCanvas');
+    const fwCtx = fwCanvas.getContext('2d');
+    let fwParticles = [];
+
+    function resizeCanvas() {
+      fwCanvas.width = window.innerWidth;
+      fwCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class FireworkParticle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 6 + 2;
+        this.vx = Math.cos(angle) * speed;
+        this.vy = Math.sin(angle) * speed;
+        this.alpha = 1;
+        this.decay = Math.random() * 0.02 + 0.015;
+        this.radius = Math.random() * 3 + 1;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vy += 0.05; // gravity
+        this.alpha -= this.decay;
+      }
+
+      draw() {
+        fwCtx.save();
+        fwCtx.globalAlpha = Math.max(this.alpha, 0);
+        fwCtx.beginPath();
+        fwCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        fwCtx.fillStyle = this.color;
+        fwCtx.shadowBlur = 10;
+        fwCtx.shadowColor = this.color;
+        fwCtx.fill();
+        fwCtx.restore();
+      }
+    }
+
+    function triggerFireworksBurst() {
+      playFireworkSynth();
+      const colors = ['#ffd700', '#ff5500', '#ff0055', '#00ffff', '#ffffff', '#ff9900'];
+      for (let burst = 0; burst < 3; burst++) {
+        setTimeout(() => {
+          const rx = Math.random() * (fwCanvas.width * 0.8) + fwCanvas.width * 0.1;
+          const ry = Math.random() * (fwCanvas.height * 0.5) + fwCanvas.height * 0.1;
+          const col = colors[Math.floor(Math.random() * colors.length)];
+          for (let i = 0; i < 60; i++) {
+            fwParticles.push(new FireworkParticle(rx, ry, col));
+          }
+        }, burst * 200);
+      }
+    }
+
+    function animateFireworks() {
+      fwCtx.clearRect(0, 0, fwCanvas.width, fwCanvas.height);
+      for (let i = fwParticles.length - 1; i >= 0; i--) {
+        fwParticles[i].update();
+        fwParticles[i].draw();
+        if (fwParticles[i].alpha <= 0) {
+          fwParticles.splice(i, 1);
+        }
+      }
+      requestAnimationFrame(animateFireworks);
+    }
+    animateFireworks();
+
+
+    /* ==========================================================================
+       4. COUNTDOWN TIMER & LIVE CLOCK
+       ========================================================================== */
+    function updateClockAndCountdown() {
+      const now = new Date();
+      document.getElementById('liveClock').innerText = now.toLocaleTimeString();
+
+      // Diwali 2026 Target: November 8, 2026
+      const target = new Date(2026, 10, 8, 0, 0, 0);
+      const diff = target - now;
+
+      if (diff > 0) {
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diff / 1000 / 60) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+
+        document.getElementById('cdDays').innerText = d < 10 ? '0' + d : d;
+        document.getElementById('cdHours').innerText = h < 10 ? '0' + h : h;
+        document.getElementById('cdMinutes').innerText = m < 10 ? '0' + m : m;
+        document.getElementById('cdSeconds').innerText = s < 10 ? '0' + s : s;
+      }
+    }
+    setInterval(updateClockAndCountdown, 1000);
+    updateClockAndCountdown();
+
+    function activateCelebrationMode() {
+      triggerFireworksBurst();
+      playChimeSound();
+      alert("🎉 Celebration Mode Activated! Enjoy the glowing festivities!");
+    }
+
+
+    /* ==========================================================================
+       5. PERSONALIZED WISH GENERATOR & CANVAS EXPORT
+       ========================================================================== */
+    const wishTemplates = {
+      Emotional: "Dearest {NAME}, on this divine festival of Diwali, may every diya lit bring warmth, peace, and sacred joy to your heart. You are a true blessing in my life.",
+      Funny: "Happy Diwali {NAME}! May your calories burn fast, your sweets stay delicious, your bank balance stay huge, and your crackers explode safely! Have a blast!",
+      Royal: "To the esteemed {NAME}, wishing you a grand, majestic and prosperous Diwali. May Lord Ganesha and Goddess Lakshmi bestow supreme opulence and royal health upon you.",
+      Traditional: "Shubh Deepavali {NAME}! May the eternal lights triumph over darkness, bringing health (Aagya), wealth (Dhana), and happiness (Sukha) to your abode.",
+      Inspirational: "Dear {NAME}, let the light of Diwali ignite your dreams and dispel all doubts. Shine brighter than a million stars and conquer new heights this year!",
+      Premium: "✨ Golden Greetings {NAME}! May your life be illuminated with infinite prosperity, priceless memories, and golden success. Shubh Deepavali! ✨"
+    };
+
+    function generateWish() {
+      const name = document.getElementById('recipientName').value || 'Friend';
+      const style = document.getElementById('wishStyle').value;
+      const tpl = wishTemplates[style] || wishTemplates.Emotional;
+
+      const result = tpl.replace(/{NAME}/g, name);
+      document.getElementById('wishOutput').innerText = result;
+      playChimeSound();
+    }
+
+    function copyGeneratedWish() {
+      const text = document.getElementById('wishOutput').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Wish copied to clipboard!");
+      });
+    }
+
+    function shareWishWhatsApp() {
+      const text = document.getElementById('wishOutput').innerText;
+      const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + "\n\nSent via Diwali Infinity 2026 🪔")}`;
+      window.open(url, '_blank');
+    }
+
+    function downloadWishAsCard() {
+      const name = document.getElementById('recipientName').value || 'Friend';
+      const text = document.getElementById('wishOutput').innerText;
+
+      const canvas = document.createElement('canvas');
+      canvas.width = 800;
+      canvas.height = 500;
+      const ctx = canvas.getContext('2d');
+
+      // Background Gradient
+      const grad = ctx.createLinearGradient(0, 0, 800, 500);
+      grad.addColorStop(0, '#070312');
+      grad.addColorStop(0.5, '#1a0b2e');
+      grad.addColorStop(1, '#3b0918');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 800, 500);
+
+      // Gold Border
+      ctx.strokeStyle = '#ffd700';
+      ctx.lineWidth = 6;
+      ctx.strokeRect(20, 20, 760, 460);
+
+      // Header
+      ctx.fillStyle = '#ffd700';
+      ctx.font = 'bold 36px Cinzel, serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('HAPPY DIWALI 2026', 400, 80);
+
+      // Subheader
+      ctx.fillStyle = '#ff8c00';
+      ctx.font = '18px Plus Jakarta Sans, sans-serif';
+      ctx.fillText(`Specially Crafted for: ${name}`, 400, 120);
+
+      // Wish Text Wrapper
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'italic 20px Georgia, serif';
+      const lines = wrapText(ctx, text, 680);
+      let startY = 200;
+      lines.forEach(line => {
+        ctx.fillText(line, 400, startY);
+        startY += 32;
+      });
+
+      // Footer Branding
+      ctx.fillStyle = '#ffd700';
+      ctx.font = '14px Plus Jakarta Sans, sans-serif';
+      ctx.fillText('🪔 DIWALI INFINITY – One Festival. Infinite Lights. 🪔', 400, 440);
+
+      // Download trigger
+      const link = document.createElement('a');
+      link.download = `Diwali_Wish_${name}.png`;
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+
+    function wrapText(ctx, text, maxWidth) {
+      const words = text.split(' ');
+      const lines = [];
+      let currentLine = words[0];
+
+      for (let i = 1; i < words.length; i++) {
+        const word = words[i];
+        const width = ctx.measureText(currentLine + ' ' + word).width;
+        if (width < maxWidth) {
+          currentLine += ' ' + word;
+        } else {
+          lines.push(currentLine);
+          currentLine = word;
+        }
+      }
+      lines.push(currentLine);
+      return lines;
+    }
+
+
+    /* ==========================================================================
+       6. 12 INTERACTIVE SURPRISE CARDS MODAL SYSTEM
+       ========================================================================== */
+    const surpriseData = {
+      1: { icon: '<i class="fa-solid fa-hands-praying"></i>', title: 'Golden Blessing', body: '"Om Shreem Hreem Shree Mahalaxmiyei Namah"\n\nMay Goddess Lakshmi bless your household with continuous prosperity, wealth, peace, and eternal divine light.' },
+      2: { icon: '<i class="fa-solid fa-flame text-diwali-gold animate-bounce"></i>', title: 'Magic Diya', body: '<div class="diya-flame scale-125 my-4"></div><p>You have lit the sacred eternal flame of peace!</p>' },
+      3: { icon: '<i class="fa-solid fa-volcano"></i>', title: 'Fireworks Explosion', body: 'Boom! Fireworks launched in the sky canvas!' },
+      4: { icon: '<i class="fa-solid fa-key"></i>', title: 'Secret Message', body: '💖 Secret Unlocked: "Happiness increases when shared with loved ones. You are cherished today & always!"' },
+      5: { icon: '<i class="fa-solid fa-crystal-ball"></i>', title: 'Fortune of Light', body: '🔮 Diwali Prophecy: "An unexpected golden opportunity and immense personal joy will blossom in your life before the year ends!"' },
+      6: { icon: '<i class="fa-solid fa-box-open"></i>', title: 'Happiness Box', body: '📦 Golden Quote: "Light a lamp of love within your heart, and no darkness can ever reach you."' },
+      7: { icon: '<i class="fa-solid fa-coins"></i>', title: 'Golden Shower', body: '💰 Gold Coin Particles Raining!' },
+      8: { icon: '<i class="fa-solid fa-house-chimney-heart"></i>', title: 'Family Love', body: '🏡 Family Blessing: "A warm house filled with laughter, delicious sweets, and golden memories is the ultimate Diwali gift."' },
+      9: { icon: '<i class="fa-solid fa-user-group"></i>', title: 'Friendship Forever', body: '🤝 Friends Forever: "True friends are like diyas—they illuminate your darkest days and double your golden moments."' },
+      10: { icon: '<i class="fa-solid fa-star"></i>', title: 'Million Stars', body: '✨ Night Sky Celestial Starfield Toggled!' },
+      11: { icon: '<i class="fa-solid fa-gift"></i>', title: 'Mystery Gift', body: '🎁 You opened the Mystery Gift: "Granted +1000 Divine Happiness Points & Good Luck for 2026!"' },
+      12: { icon: '<i class="fa-solid fa-infinity"></i>', title: 'Infinite Light', body: '🌟 Ultimate Celestial Finale Activated!' }
+    };
+
+    function openSurprise(id) {
+      playChimeSound();
+      const data = surpriseData[id];
+      document.getElementById('modalIcon').innerHTML = data.icon;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalBody').innerHTML = data.body;
+      document.getElementById('surpriseModal').classList.remove('hidden-el');
+
+      if (id === 3 || id === 12) {
+        triggerFireworksBurst();
+      }
+    }
+
+    function closeSurpriseModal() {
+      document.getElementById('surpriseModal').classList.add('hidden-el');
+    }
+
+
+    /* ==========================================================================
+       7. FAMILY & FRIENDS WISH WALL (LOCAL STORAGE PERSISTENCE)
+       ========================================================================== */
+    let sampleWishes = [
+      { id: 1, name: 'Priyanshu Sharma', msg: 'Wishing everyone an extraordinary Diwali filled with golden success!', likes: 12 },
+      { id: 2, name: 'Ananya Roy', msg: 'May Goddess Lakshmi bless our family with health and laughter always. 🪔', likes: 19 },
+      { id: 3, name: 'Rohan Gupta', msg: 'Happy Diwali to all my best friends! Let’s meet and eat sweets!', likes: 8 }
+    ];
+
+    function loadWallWishes() {
+      const stored = localStorage.getItem('diwali_wall_wishes');
+      if (stored) {
+        sampleWishes = JSON.parse(stored);
+      }
+      renderWallWishes();
+    }
+
+    function renderWallWishes() {
+      const grid = document.getElementById('wishesGrid');
+      grid.innerHTML = '';
+
+      sampleWishes.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "glass-card p-6 rounded-3xl border border-diwali-gold/20 flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-cinzel font-bold text-diwali-gold">${item.name}</span>
+              <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron">Verified Wish</span>
+            </div>
+            <p class="text-slate-200 text-sm italic font-serif leading-relaxed font-light">"${item.msg}"</p>
+          </div>
+          <div class="flex items-center justify-between mt-6 pt-4 border-t border-diwali-gold/10">
+            <button onclick="likeWish(${item.id})" class="text-xs text-rose-400 font-semibold flex items-center gap-1.5 hover:scale-110 transition-transform">
+              <i class="fa-solid fa-heart"></i> <span>${item.likes}</span>
+            </button>
+            <button onclick="deleteWish(${item.id})" class="text-[10px] text-slate-500 hover:text-slate-300 uppercase tracking-widest">Remove</button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function addWallMessage() {
+      const name = document.getElementById('wallName').value;
+      const msg = document.getElementById('wallMsg').value;
+      if (!name || !msg) return;
+
+      const newWish = {
+        id: Date.now(),
+        name: name,
+        msg: msg,
+        likes: 1
+      };
+
+      sampleWishes.unshift(newWish);
+      localStorage.setItem('diwali_wall_wishes', JSON.stringify(sampleWishes));
+      renderWallWishes();
+
+      document.getElementById('wallName').value = '';
+      document.getElementById('wallMsg').value = '';
+      playChimeSound();
+    }
+
+    function likeWish(id) {
+      const wish = sampleWishes.find(w => w.id === id);
+      if (wish) {
+        wish.likes++;
+        localStorage.setItem('diwali_wall_wishes', JSON.stringify(sampleWishes));
+        renderWallWishes();
+      }
+    }
+
+    function deleteWish(id) {
+      sampleWishes = sampleWishes.filter(w => w.id !== id);
+      localStorage.setItem('diwali_wall_wishes', JSON.stringify(sampleWishes));
+      renderWallWishes();
+    }
+    loadWallWishes();
+
+
+    /* ==========================================================================
+       8. FESTIVE MINI GAMES HUB
+       ========================================================================== */
+    let currentGame = 1;
+
+    function switchGame(gNum) {
+      currentGame = gNum;
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`game${i}Container`).classList.add('hidden-el');
+        const tab = document.getElementById(`tabGame${i}`);
+        tab.className = "px-6 py-3 rounded-2xl font-cinzel text-xs font-bold uppercase tracking-wider border border-diwali-gold/30 text-slate-300 hover:border-diwali-gold transition-all";
+      }
+
+      document.getElementById(`game${gNum}Container`).classList.remove('hidden-el');
+      const activeTab = document.getElementById(`tabGame${gNum}`);
+      activeTab.className = "px-6 py-3 rounded-2xl font-cinzel text-xs font-bold uppercase tracking-wider border border-diwali-gold bg-diwali-gold text-diwali-black transition-all";
+    }
+
+    // GAME 1: COIN CATCHING
+    let g1Score = 0, g1Time = 30, g1Interval = null;
+    function startCoinCatchGame() {
+      g1Score = 0; g1Time = 30;
+      document.getElementById('g1Score').innerText = g1Score;
+      document.getElementById('g1Timer').innerText = g1Time;
+
+      clearInterval(g1Interval);
+      const canvasArea = document.getElementById('g1Canvas');
+
+      // Mouse control for basket
+      canvasArea.onmousemove = (e) => {
+        const rect = canvasArea.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        document.getElementById('g1Basket').style.left = `${Math.max(20, Math.min(x, rect.width - 40))}px`;
+      };
+
+      g1Interval = setInterval(() => {
+        g1Time--;
+        document.getElementById('g1Timer').innerText = g1Time;
+
+        // Spawn Coin
+        if (Math.random() > 0.3) {
+          const coin = document.createElement('div');
+          coin.className = "absolute w-6 h-6 rounded-full bg-diwali-gold border border-white shadow-[0_0_10px_rgba(255,215,0,1)] flex items-center justify-center text-[10px] text-diwali-black font-bold";
+          coin.innerText = "🪙";
+          coin.style.left = `${Math.random() * 85 + 5}%`;
+          coin.style.top = '0px';
+          canvasArea.appendChild(coin);
+
+          let top = 0;
+          const fall = setInterval(() => {
+            top += 5;
+            coin.style.top = `${top}px`;
+
+            const bRect = document.getElementById('g1Basket').getBoundingClientRect();
+            const cRect = coin.getBoundingClientRect();
+
+            if (cRect.bottom >= bRect.top && cRect.left >= bRect.left - 20 && cRect.right <= bRect.right + 20) {
+              g1Score += 10;
+              document.getElementById('g1Score').innerText = g1Score;
+              playChimeSound();
+              coin.remove();
+              clearInterval(fall);
+            } else if (top > 300) {
+              coin.remove();
+              clearInterval(fall);
+            }
+          }, 40);
+        }
+
+        if (g1Time <= 0) {
+          clearInterval(g1Interval);
+          alert(`🎉 Game Over! You collected ${g1Score} Golden Coin points!`);
+        }
+      }, 1000);
+    }
+
+    // GAME 2: LIGHT DIYAS
+    let g2Lit = 0, g2Time = 15, g2TimerInt = null;
+    function startDiyaLightGame() {
+      g2Lit = 0; g2Time = 15;
+      document.getElementById('g2Score').innerText = 0;
+      document.getElementById('g2Timer').innerText = 15;
+      const grid = document.getElementById('g2Grid');
+      grid.innerHTML = '';
+
+      for (let i = 0; i < 12; i++) {
+        const item = document.createElement('div');
+        item.className = "glass-card h-20 rounded-2xl border border-diwali-gold/30 flex items-center justify-center cursor-pointer hover:border-diwali-gold";
+        item.innerHTML = `<i class="fa-solid fa-flame text-slate-700 text-2xl transition-all"></i>`;
+        item.onclick = () => {
+          if (!item.classList.contains('lit')) {
+            item.classList.add('lit');
+            item.querySelector('i').className = "fa-solid fa-flame text-diwali-gold text-3xl animate-bounce glow-gold";
+            g2Lit++;
+            document.getElementById('g2Score').innerText = g2Lit;
+            playDiyaSound();
+            if (g2Lit === 12) {
+              clearInterval(g2TimerInt);
+              alert("🪔 Magnificent! You lit all 12 diyas!");
+            }
+          }
+        };
+        grid.appendChild(item);
+      }
+
+      clearInterval(g2TimerInt);
+      g2TimerInt = setInterval(() => {
+        g2Time--;
+        document.getElementById('g2Timer').innerText = g2Time;
+        if (g2Time <= 0) {
+          clearInterval(g2TimerInt);
+          alert(`Time's up! You lit ${g2Lit} out of 12 diyas.`);
+        }
+      }, 1000);
+    }
+
+    // GAME 3: FIREWORK REACTION
+    let g3Score = 0, g3Time = 20, g3Int = null;
+    function startFireworkGame() {
+      g3Score = 0; g3Time = 20;
+      document.getElementById('g3Score').innerText = 0;
+      document.getElementById('g3Timer').innerText = 20;
+
+      const area = document.getElementById('g3Area');
+      area.innerHTML = '';
+
+      clearInterval(g3Int);
+      g3Int = setInterval(() => {
+        g3Time--;
+        document.getElementById('g3Timer').innerText = g3Time;
+
+        // Spawn pop target
+        const fw = document.createElement('div');
+        fw.className = "absolute w-12 h-12 rounded-full bg-gradient-to-tr from-diwali-saffron to-diwali-gold flex items-center justify-center text-white text-lg cursor-pointer animate-ping";
+        fw.style.left = `${Math.random() * 80 + 5}%`;
+        fw.style.top = `${Math.random() * 75 + 5}%`;
+        fw.innerHTML = '<i class="fa-solid fa-burst"></i>';
+        fw.onclick = () => {
+          g3Score += 5;
+          document.getElementById('g3Score').innerText = g3Score;
+          playFireworkSynth();
+          fw.remove();
+        };
+        area.appendChild(fw);
+        setTimeout(() => { if (fw.parentNode) fw.remove(); }, 1200);
+
+        if (g3Time <= 0) {
+          clearInterval(g3Int);
+          alert(`✨ Game Over! You popped ${g3Score / 5} fireworks! Score: ${g3Score}`);
+        }
+      }, 1000);
+    }
+
+    // GAME 4: MEMORY OF LIGHTS
+    const memIcons = ['🪔', '🪔', '🎆', '🎆', '✨', '✨', '🪙', '🪙', '🍬', '🍬', '🌸', '🌸'];
+    let flippedCards = [], matchedPairs = 0, moves = 0;
+
+    function startMemoryGame() {
+      matchedPairs = 0; moves = 0; flippedCards = [];
+      document.getElementById('g4Score').innerText = 0;
+      document.getElementById('g4Moves').innerText = 0;
+
+      const grid = document.getElementById('g4Grid');
+      grid.innerHTML = '';
+
+      const shuffled = [...memIcons].sort(() => Math.random() - 0.5);
+
+      shuffled.forEach((symbol, idx) => {
+        const card = document.createElement('div');
+        card.className = "glass-card h-20 rounded-2xl border border-diwali-gold/30 flex items-center justify-center text-2xl cursor-pointer font-bold select-none";
+        card.dataset.symbol = symbol;
+        card.innerText = '❓';
+        card.onclick = () => {
+          if (flippedCards.length < 2 && !card.classList.contains('flipped') && !card.classList.contains('matched')) {
+            card.innerText = symbol;
+            card.classList.add('flipped', 'bg-diwali-purple');
+            flippedCards.push(card);
+
+            if (flippedCards.length === 2) {
+              moves++;
+              document.getElementById('g4Moves').innerText = moves;
+              if (flippedCards[0].dataset.symbol === flippedCards[1].dataset.symbol) {
+                flippedCards[0].classList.add('matched', 'border-emerald-500');
+                flippedCards[1].classList.add('matched', 'border-emerald-500');
+                matchedPairs++;
+                document.getElementById('g4Score').innerText = matchedPairs;
+                playChimeSound();
+                flippedCards = [];
+                if (matchedPairs === 6) {
+                  alert(`🎉 Congratulations! Memory matched in ${moves} moves!`);
+                }
+              } else {
+                setTimeout(() => {
+                  flippedCards[0].innerText = '❓';
+                  flippedCards[1].innerText = '❓';
+                  flippedCards[0].classList.remove('flipped', 'bg-diwali-purple');
+                  flippedCards[1].classList.remove('flipped', 'bg-diwali-purple');
+                  flippedCards = [];
+                }, 800);
+              }
+            }
+          }
+        };
+        grid.appendChild(card);
+      });
+    }
+    startMemoryGame();
+
+
+    /* ==========================================================================
+       9. GREETING CARD STUDIO CANVAS RENDERER
+       ========================================================================== */
+    function drawStudioCard() {
+      const canvas = document.getElementById('studioCanvas');
+      const ctx = canvas.getContext('2d');
+      const sender = document.getElementById('cardSender').value || 'Sender';
+      const receiver = document.getElementById('cardReceiver').value || 'Receiver';
+      const theme = document.getElementById('cardTheme').value;
+      const text = document.getElementById('cardText').value;
+
+      // Theme Gradient
+      const grad = ctx.createLinearGradient(0, 0, 600, 400);
+      if (theme === 'royal') {
+        grad.addColorStop(0, '#1a0b2e');
+        grad.addColorStop(1, '#070312');
+      } else if (theme === 'saffron') {
+        grad.addColorStop(0, '#ff5500');
+        grad.addColorStop(1, '#110520');
+      } else if (theme === 'emerald') {
+        grad.addColorStop(0, '#064e3b');
+        grad.addColorStop(1, '#070312');
+      } else {
+        grad.addColorStop(0, '#3b0918');
+        grad.addColorStop(1, '#070312');
+      }
+
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 600, 400);
+
+      // Decorative Gold Frame
+      ctx.strokeStyle = '#ffd700';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(15, 15, 570, 370);
+
+      // Header
+      ctx.fillStyle = '#ffd700';
+      ctx.font = 'bold 26px Cinzel, serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('HAPPY DIWALI 2026', 300, 60);
+
+      // Receiver Name
+      ctx.fillStyle = '#ff8c00';
+      ctx.font = '16px Plus Jakarta Sans, sans-serif';
+      ctx.fillText(`Dearest ${receiver},`, 300, 100);
+
+      // Message
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'italic 16px Georgia, serif';
+      const lines = wrapText(ctx, text, 480);
+      let startY = 150;
+      lines.forEach(line => {
+        ctx.fillText(line, 300, startY);
+        startY += 26;
+      });
+
+      // Sender Name
+      ctx.fillStyle = '#ffd700';
+      ctx.font = 'bold 16px Plus Jakarta Sans, sans-serif';
+      ctx.fillText(`With Love & Warm Blessings,`, 300, 310);
+      ctx.fillText(sender, 300, 335);
+
+      // Diya Icon Graphic
+      ctx.font = '24px fontawesome';
+      ctx.fillText('🪔', 300, 370);
+    }
+    setTimeout(drawStudioCard, 500);
+
+    function downloadStudioCard() {
+      const canvas = document.getElementById('studioCanvas');
+      const link = document.createElement('a');
+      link.download = 'Diwali_Greeting_Studio.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+
+    function shareStudioCardWA() {
+      const sender = document.getElementById('cardSender').value;
+      const receiver = document.getElementById('cardReceiver').value;
+      const msg = `🪔 Happy Diwali ${receiver}! ${sender} has sent you a special greeting card! Check out Diwali Infinity 2026!`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+
+    /* ==========================================================================
+       10. INFINITE WISHES & QUOTES DATABASE & RENDERER
+       ========================================================================== */
+    const wishDatabase = [
+      { cat: 'wishes', text: 'May the light of diyas fill your home with wealth, health, and endless joy. Happy Diwali 2026!' },
+      { cat: 'wishes', text: 'Wishing you and your family a blessed, sparkling, and prosperous Diwali!' },
+      { cat: 'quotes', text: '“Doubt is like darkness, and trust is like light. There is no way one can destroy light by throwing darkness into it.”' },
+      { cat: 'family', text: 'Family is the sweetest sweet of Diwali. May our bond shine brighter every single year.' },
+      { cat: 'inspirational', text: 'Illuminate your inner strength. Let this festival of lights spark your biggest breakthroughs!' },
+      { cat: 'wishes', text: 'May Goddess Lakshmi enter your home and shower eternal fortune upon your enterprise.' },
+      { cat: 'quotes', text: '“Light a lamp of love within your heart, and no darkness can ever reach your soul.”' },
+      { cat: 'family', text: 'Warm Diwali blessings to my beloved family. Grateful for our endless warmth and love.' },
+      { cat: 'inspirational', text: 'No matter how deep the darkness of the night, a single diya can awaken the morning.' }
+    ];
+
+    let currentCatFilter = 'all';
+
+    function renderWishLibrary() {
+      const search = document.getElementById('wishSearch').value.toLowerCase();
+      const grid = document.getElementById('wishLibraryGrid');
+      grid.innerHTML = '';
+
+      const filtered = wishDatabase.filter(item => {
+        const matchesCat = currentCatFilter === 'all' || item.cat === currentCatFilter;
+        const matchesSearch = item.text.toLowerCase().includes(search);
+        return matchesCat && matchesSearch;
+      });
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "glass-card p-6 rounded-3xl border border-diwali-gold/20 flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <span class="text-[10px] uppercase font-bold tracking-widest text-diwali-saffron mb-3 block">${item.cat}</span>
+            <p class="text-slate-200 text-sm italic font-serif leading-relaxed">"${item.text}"</p>
+          </div>
+          <button onclick="copyText('${item.text}')" class="mt-6 pt-4 border-t border-diwali-gold/10 text-xs text-diwali-gold font-bold uppercase tracking-wider flex items-center gap-2 hover:text-white">
+            <i class="fa-regular fa-copy"></i> Copy Message
+          </button>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterWishCategory(cat) {
+      currentCatFilter = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.className = "cat-btn px-4 py-2 rounded-xl text-xs font-bold uppercase border border-diwali-gold/30 text-slate-300";
+      });
+      event.target.className = "cat-btn active px-4 py-2 rounded-xl text-xs font-bold uppercase border border-diwali-gold bg-diwali-gold text-diwali-black";
+      renderWishLibrary();
+    }
+
+    function copyText(txt) {
+      navigator.clipboard.writeText(txt).then(() => {
+        alert("Wish copied!");
+      });
+    }
+    renderWishLibrary();
+
+
+    /* ==========================================================================
+       11. ULTIMATE COSMIC SURPRISE FINALE
+       ========================================================================== */
+    function triggerCosmicFinale() {
+      playChimeSound();
+      triggerFireworksBurst();
+
+      const modal = document.getElementById('surpriseModal');
+      document.getElementById('modalIcon').innerHTML = '<i class="fa-solid fa-infinity text-6xl text-diwali-gold animate-spin-slow"></i>';
+      document.getElementById('modalTitle').innerText = 'THE ULTIMATE COSMIC BLESSING';
+      document.getElementById('modalBody').innerHTML = `
+        <div class="text-center py-4">
+          <p class="text-xl font-cinzel text-diwali-gold glow-gold font-bold mb-3">"May your life shine brighter than a million stars."</p>
+          <p class="text-sm text-slate-300 leading-relaxed max-w-md mx-auto">May peace surround your family, happiness fill your heart, and infinite prosperity light your pathway forever.</p>
+        </div>
+      `;
+      modal.classList.remove('hidden-el');
+    }
+
+
+    /* ==========================================================================
+       12. MOBILE NAV TOGGLE & UTILS
+       ========================================================================== */
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('hidden');
+    }
+
+    // Window load trigger
+    window.onload = function() {
+      typeWriterEffect();
+    };
+  </script>
+</body>
+</html>
